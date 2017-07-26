@@ -1,0 +1,9 @@
+[user]
+	email = mcharron@naoned.fr
+	name = Maxime Charron
+[push]
+	default = current
+[alias]
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    st = status -s
+    br = branch
