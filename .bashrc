@@ -123,3 +123,15 @@ if [ -f ~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.s
     POWERLINE_BASH_SELECT=1
     source ~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
 fi
+
+dex() {
+    local CONTAINER_NAME="$1"
+    local COMMAND="bash"
+
+    if [ "$#" -gt 1 ]; then
+        COMMAND=$(echo "$@" | cut -d' ' -f2-)
+    fi  
+
+    docker exec -ti "${CONTAINER_NAME}" ${COMMAND}
+}
+
