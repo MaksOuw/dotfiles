@@ -135,3 +135,12 @@ dex() {
     docker exec -ti "${CONTAINER_NAME}" ${COMMAND}
 }
 
+# Tiny Care Terminal
+export TTC_SAY_BOX="llama"
+export TTC_REPOS='~/Projets/inao,~/Projets/kenao'
+export TTC_REPOS_DEPTH=2
+export TTC_WEATHER='Vertou'
+export TTC_CELSIUS=true
+export TTC_APIKEYS=false
+export TTC_UPDATE_INTERVAL=2
+
