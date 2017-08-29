@@ -87,12 +87,6 @@ fi
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-alias dps='docker ps --format "table {{.Names}}\t{{.Image}}\t{{.ID}}\t{{.Status}}\t{{.RunningFor}}\t{{.Ports}}"'
-
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
@@ -124,23 +118,7 @@ if [ -f ~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.s
     source ~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
 fi
 
-dex() {
-    local CONTAINER_NAME="$1"
-    local COMMAND="bash"
-
-    if [ "$#" -gt 1 ]; then
-        COMMAND=$(echo "$@" | cut -d' ' -f2-)
-    fi  
-
-    docker exec -ti "${CONTAINER_NAME}" ${COMMAND}
-}
-
-# Tiny Care Terminal
-export TTC_SAY_BOX="llama"
-export TTC_REPOS='~/Projets/inao,~/Projets/kenao'
-export TTC_REPOS_DEPTH=2
-export TTC_WEATHER='Vertou'
-export TTC_CELSIUS=true
-export TTC_APIKEYS=false
-export TTC_UPDATE_INTERVAL=2
-
+for file in `ls ~/.bashrc.d/*.bashrc`;
+do
+  source $file
+done
