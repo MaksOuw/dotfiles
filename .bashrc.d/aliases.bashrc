@@ -5,4 +5,4 @@ alias dps='docker ps --format "table {{.Names}}\t{{.Image}}\t{{.ID}}\t{{.Status}
 alias docker-yolo='docker rm -fv $(docker ps -aq)'
 alias docker-yolo++='docker rm -fv $(docker ps -aq) && docker system prune'
 alias top='htop'
-
+alias sba='source ~/.bashrc'
