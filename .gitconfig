@@ -11,8 +11,12 @@
     ci = commit
     co = checkout
     fpr= !git fetch --prune && git pull --rebase
+    df = diff
+    a = add -p
 [core]
     editor = vim
+    fileMode = false
+    preloadindex = true
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
