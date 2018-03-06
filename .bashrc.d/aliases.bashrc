@@ -6,3 +6,5 @@ alias docker-yolo='docker rm -fv $(docker ps -aq)'
 alias docker-yolo++='docker rm -fv $(docker ps -aq) && docker system prune'
 alias top='htop'
 alias sba='source ~/.bashrc'
+alias git='LANG=en_US.UTF-8 git'
+
