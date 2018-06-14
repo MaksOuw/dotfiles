@@ -6,13 +6,15 @@
 [alias]
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
     st = status -s
-    br = branch
+    br = branch -vv
     bra= branch -a
     ci = commit
     co = checkout
     fpr= !git fetch --prune && git pull --rebase
     df = diff
     a = add -p
+    ci-edit = !git commit --amend
+    ca = !git commit --amend --no-edit
 [core]
     editor = vim
     fileMode = false
