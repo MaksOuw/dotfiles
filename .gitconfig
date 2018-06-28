@@ -7,7 +7,7 @@
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
     st = status -s
     br = branch -vv
-    bra= branch -a
+    bra= branch -avv
     ci = commit
     co = checkout
     fpr= !git fetch --prune && git pull --rebase
@@ -15,6 +15,7 @@
     a = add -p
     ci-edit = !git commit --amend
     ca = !git commit --amend --no-edit
+    cl = clone
 [core]
     editor = vim
     fileMode = false
@@ -24,3 +25,5 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[url "git@github.com:naoned/"]
+    insteadOf = naoned://

@@ -1,4 +1,4 @@
-dex() {
+function dex() {
     local CONTAINER_NAME="$1"
     local COMMAND="bash"
 
@@ -8,4 +8,3 @@ dex() {
 
     docker exec -ti "${CONTAINER_NAME}" ${COMMAND}
 }
-
