@@ -5,6 +5,7 @@
 	default = current
 [alias]
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative -n 10
     st = status -s
     br = branch -vv
     bra= branch -avv
@@ -16,6 +17,7 @@
     ci-edit = !git commit --amend
     ca = !git commit --amend --no-edit
     cl = clone
+    wip = !git add . && git commit -m "wip"
 [core]
     editor = vim
     fileMode = false
