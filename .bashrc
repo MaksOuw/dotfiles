@@ -123,15 +123,3 @@ do
   source $file
 done
 
-if [ -f ~/.bash_aliases_mnessh ]; then
-    . ~/.bash_aliases_mnessh
-fi
-
-if [ -f ~/.bash_aliases_vanao ]; then
-     . ~/.bash_aliases_vanao
-fi
- 
-if [ -f ~/.bash_aliases_mnedesk ]; then
-    . ~/.bash_aliases_mnedesk
-fi
-
