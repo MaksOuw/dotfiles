@@ -111,11 +111,11 @@ if ! shopt -oq posix; then
   fi
 fi
 
-if [ -f ~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh ]; then
+if [ -f /usr/local/lib/python2.7/dist-packages/powerline/bindings/bash/powerline.sh ]; then
     powerline-daemon -q
     POWERLINE_BASH_CONTINUATION=1
     POWERLINE_BASH_SELECT=1
-    source ~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
+    . /usr/local/lib/python2.7/dist-packages/powerline/bindings/bash/powerline.sh
 fi
 
 for file in `ls ~/.bashrc.d/*.bashrc`;
