@@ -123,3 +123,4 @@ do
   source $file
 done
 
+export PATH="$PATH:/home/mcharron/Apps/flutter/bin"

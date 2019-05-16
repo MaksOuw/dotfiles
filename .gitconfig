@@ -18,10 +18,17 @@
     ca = !git commit --amend --no-edit
     cl = clone
     wip = !git add . && git commit -m "wip"
+    dfc = diff --cached
+    back = reset --soft
+    clean-gone-branches = !git br | grep gone | cut -f3 -d ' ' | xargs -r git branch -D
+    cp = cherry-pick
+    current-branch = ! git branch 2> /dev/null | sed -e '/^[^*]/d' | cut -f2 -d' '
+    pu = ! git current-branch | xargs git push -u origin
 [core]
     editor = vim
     fileMode = false
     preloadindex = true
+    excludesfile = ~/.gitignore
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
