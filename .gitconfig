@@ -1,0 +1,41 @@
+[user]
+	email = mcharron@hipay.com
+	name = Maxime Charron
+[push]
+	default = current
+[alias]
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative -n 10
+    st = status -s
+    br = branch -vv
+    bra= branch -avv
+    ci = commit
+    co = checkout
+    fpr= !git fetch --prune && git pull --rebase
+    df = diff
+    a = add -p
+    ci-edit = !git commit --amend
+    ca = !git commit --amend --no-edit
+    cl = clone
+    wip = !git add . && git commit -m "wip"
+    dfc = diff --cached
+    back = reset --soft
+    clean-gone-branches = !git br | grep gone | cut -f3 -d ' ' | xargs -r git branch -D
+    cp = cherry-pick
+    current-branch = ! git branch 2> /dev/null | sed -e '/^[^*]/d' | cut -f2 -d' '
+    pu = ! git current-branch | xargs git push -u origin
+    pr = pull --rebase
+[core]
+    editor = vim
+    fileMode = false
+    preloadindex = true
+    excludesfile = ~/.gitignore
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[url "git@gitlab.hipay.org:"]
+    insteadOf = hipay://
+[init]
+	defaultBranch = stable
